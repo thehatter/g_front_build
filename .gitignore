@@ -9,7 +9,6 @@
 # production
 /build
 
-
 # secrets
 secrets.json
 client_secret.json
