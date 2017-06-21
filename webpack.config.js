@@ -44,7 +44,8 @@ module.exports = {
   },
   plugins: [
     new ExtractTextPlugin({ // define where to save the file
-      filename: 'build/[name].bundle.css',
+      // filename: 'build/[name].bundle.css',
+      filename: 'build/mobile.bundle.css',
       allChunks: true,
     }),
   ],
