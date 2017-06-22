@@ -3,9 +3,15 @@ const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
-  entry: ['./src/app.js', './scss/mobile_main.scss'],
+  // entry: ['./src/app.js', './scss/mobile_main.scss', './scss/adaptive_main.scss'],
+  entry: {
+    adaptive_styles: './scss/adaptive_main.scss',
+    mobile_styles: './scss/mobile_main.scss',
+    mobile_main: './src/mobile_main.js',
+    adaptive_main: './src/adaptive_main.js'
+  },
   output: {
-    filename: 'build/bundle.js'
+    filename: 'build/[name].js'
   },
   module: {
 
@@ -13,6 +19,15 @@ module.exports = {
       /*
       your other rules for JavaScript transpiling go in here
       */
+      {
+        test: /\.js$/,
+        exclude: [/node_modules/],
+        use: [{
+          loader: 'babel-loader',
+          // options: { presets: ['env'], },
+          options: { presets: ['es2015'] },
+        }],
+      },
       {
         test: /\.(png|jpg|gif)$/,
         use: [
@@ -24,12 +39,12 @@ module.exports = {
           }
         ]
       },
-      { // regular css files
-        test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          use: 'css-loader?importLoaders=1',
-        }),
-      },
+      // { // regular css files
+      //   test: /\.css$/,
+      //   use: ExtractTextPlugin.extract({
+      //     use: 'css-loader?importLoaders=1',
+      //   }),
+      // },
       { // sass / scss loader for webpack
         // ?url=false to not load images in css and scss files
         // minimize=true to minify css
@@ -44,8 +59,8 @@ module.exports = {
   },
   plugins: [
     new ExtractTextPlugin({ // define where to save the file
-      // filename: 'build/[name].bundle.css',
-      filename: 'build/mobile.bundle.css',
+      filename: 'build/[name].bundle.css',
+      // filename: 'build/mobile.bundle.css',
       allChunks: true,
     }),
   ],
