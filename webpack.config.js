@@ -7,8 +7,8 @@ module.exports = {
   entry: {
     adaptive_styles: './scss/adaptive_main.scss',
     mobile_styles: './scss/mobile_main.scss',
-    mobile_main: './src/mobile_main.js',
-    adaptive_main: './src/adaptive_main.js'
+    // mobile_main: './src/mobile_main.js',
+    // adaptive_main: './src/adaptive_main.js'
   },
   output: {
     filename: 'build/[name].js'
