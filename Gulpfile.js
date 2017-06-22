@@ -6,7 +6,7 @@ const gp_uglify = require('gulp-uglify');
 gulp.task('mobile', function(){
     return gulp.src(['./src/vendor/jquery-3.2.1.min.js',
                      './src/vendor/bootstrap.min.js',
-                     './src/bootstrap.offcanvas.min.js',
+                     './src/vendor/bootstrap.offcanvas.min.js',
                      './src/vendor/ajax.js',
                      './src/vendor/lytebox.js',
                      './src/vendor/lightbox.min.js',
