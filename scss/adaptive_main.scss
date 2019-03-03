@@ -11,11 +11,29 @@
 @import "vendor/jquery.countdown.css";
 
 // Modules and Variables
+@import "./varibles.scss";
 @import "base/adaptive_main.css";
 @import "base/top_bar_2015.css";
 
 // Partials
+@import "components/main_nav.scss";
+@import "components/header.scss";
+@import "components/news_item_v2.scss";
+@import "components/slim_items.scss";
+@import "components/standart_slider_baner.scss";
+@import "components/widget_afisha.scss";
+@import "components/widget_reviews.scss";
+@import "components/widget_video_v2.scss";
+@import "components/widget_work.scss";
+@import "components/widget_discount.scss";
+@import "components/widget_namvam.scss";
+@import "components/widget_naparu.scss";
+@import "components/popular_sections_v2.scss";
 @import "components/ad_sale_pages.scss";
 @import "components/new_video_vidget.scss";
+@import "components/uni_footer.scss";
+@import "components/article_page.scss";
+@import "components/statistics_v2.scss";
 
-//
+// Overrides
+@import "./overrides.scss";
