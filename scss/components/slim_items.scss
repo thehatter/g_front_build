@@ -61,7 +61,7 @@
 
   @media screen and (max-width: 1200px) {
     padding: 8px;
-  } 
+  }
 
 /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.3+0,0.35+100 */
 background: -moz-linear-gradient(top, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.35) 100%); /* FF3.6-15 */
@@ -140,3 +140,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99000000', e
 }
 
 
+.new_org_news .slim_item .img{
+  max-height: 138px;
+  overflow: hidden;
+}

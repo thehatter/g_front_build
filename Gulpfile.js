@@ -1,9 +1,29 @@
 const gulp      = require('gulp');
+const sass      = require('gulp-sass');
+const cssimport = require("gulp-cssimport");
+
 const gp_concat = require('gulp-concat');
 const gp_rename = require('gulp-rename');
 const gp_uglify = require('gulp-uglify');
 
-gulp.task('mobile', function(){
+gulp.task('adaptive_css', function() {
+  return gulp.src('./scss/adaptive_main.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(cssimport())
+    .pipe(gp_rename('adaptive_styles.bundle.css'))
+    .pipe(gulp.dest('./build'));
+});
+
+gulp.task('mobile_css', function() {
+  return gulp.src('./scss/adaptive_main.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(cssimport())
+    .pipe(gp_rename('mobile_styles.bundle.css'))
+    .pipe(gulp.dest('./build'));
+});
+
+
+gulp.task('mobile_js', function() {
     return gulp.src(['./src/vendor/jquery-3.2.1.min.js',
                      './src/vendor/bootstrap.min.js',
                      './src/vendor/bootstrap.offcanvas.min.js',
@@ -27,7 +47,7 @@ gulp.task('mobile', function(){
         .pipe(gulp.dest('build'));
 });
 
-gulp.task('adaptive', function(){
+gulp.task('adaptive_js', function() {
     return gulp.src(['./src/vendor/jquery-1.10.2.min.js',
                      './src/vendor/bootstrap.min.js',
                      './src/vendor/jquery.jcarousel.min.js',
@@ -52,4 +72,12 @@ gulp.task('adaptive', function(){
         .pipe(gulp.dest('build'));
 });
 
-gulp.task('default', ['mobile', 'adaptive'], function(){});
+gulp.task('default', ['mobile_js', 'adaptive_js'], function(){});
+
+gulp.task('watch_adaptive_css', function () {
+  gulp.watch('./scss/**/*.scss', ['adaptive_css']);
+});
+
+gulp.task('watch_mobile_css', function () {
+  gulp.watch('./scss/**/*.scss', ['mobile_css']);
+});

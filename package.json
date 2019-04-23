@@ -15,5 +15,16 @@
     "sass-loader": "^6.0.6",
     "url-loader": "^0.5.9",
     "webpack": "^3.0.0"
+  },
+  "scripts": {
+    "build_adaptive_css": "node_modules/gulp/bin/gulp.js adaptive_css",
+    "watch_adaptive_css": "node_modules/gulp/bin/gulp.js watch_adaptive_css",
+    "build_mobile_css": "node_modules/gulp/bin/gulp.js mobile_css",
+    "watch_mobile_css": "node_modules/gulp/bin/gulp.js watch_mobile_css",
+    "build_adaptive_js": "node_modules/gulp/bin/gulp.js adaptive_js",
+    "build_mobile_js": "node_modules/gulp/bin/gulp.js mobile_js"
+  },
+  "devDependencies": {
+    "gulp-sass-glob": "^1.0.9"
   }
 }

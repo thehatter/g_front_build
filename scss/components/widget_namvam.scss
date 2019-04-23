@@ -1,6 +1,6 @@
 // widget_namvam.scss
 //
-// 
+//
 
 .widget_namvam {
   background: #F5F5F5;
@@ -74,7 +74,7 @@
   }
 }
 
-.widget_namvam .widget_horizontal_menu a:hover, 
+.widget_namvam .widget_horizontal_menu a:hover,
 .widget_namvam .widget_horizontal_menu a.active {
   background: #FFEE00;
   color: #000;
@@ -105,7 +105,7 @@
     max-width: 240px;
     min-width: 240px;
     padding: 20px 26px 10px 26px;
-    
+
     a {
       display: block;
       color: #808080;
@@ -126,7 +126,7 @@
         color: #333;
       }
     }
-    
+
   }
 
   .slim_item .sub_title {
@@ -136,4 +136,8 @@
 
 .widget_namvam .slim_items {
   margin-bottom: 0;
+}
+.widget_namvam .slim_items .img{
+  max-height: 151px;
+  overflow:hidden;
 }

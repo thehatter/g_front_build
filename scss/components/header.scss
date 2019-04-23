@@ -126,7 +126,6 @@
 }
 
 .header .informer .curency a {
-  margin-top: 2px;
   display: block;
   font-size: 24px;
   font-weight: 300;
@@ -148,14 +147,15 @@
   float: left;
   margin: 2px 5px 0 0;
   position: relative;
-  width: 40px;
+  width: 39px;
 }
 
 .header .wather_widget .img img {
   width: 35px;
   position: absolute;
-  top: 2px;
+  top: -2px;
 }
+
 
 .header .wather_widget .temperature {
   font-size: 24px;
@@ -164,6 +164,12 @@
   font-weight: 300;
   @extend %standart_font;
   color: #666;
+
+  span {
+    display: block;
+    min-width: 43px;
+    text-align: left;
+  }
 }
 
 

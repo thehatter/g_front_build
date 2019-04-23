@@ -49,14 +49,16 @@ $("#radio").click(function(){msg=window.open("/radio","msg","width=530,height=48
 $(document).ready(function(){
 			$(".call_mobile_link").click(function(){
 			
-			//data-toggle="modal"
-			$modal_shou=$(this).attr("data-target");
-			//alert($modal_shou);
-			$($modal_shou).modal('show');
+        //data-toggle="modal"
+        $modal_shou=$(this).attr("data-target");
+        //alert($modal_shou);
+        $($modal_shou).modal('show');
 			});
+
 			$("#search_show").click(function(){
 				$('#mobile_search_bar').show();
 			});
+
 			$("#close_search").click(function(){
 				$('#mobile_search_bar').hide();
 			});
@@ -65,7 +67,6 @@ $(document).ready(function(){
 				$(this).next('.phones_hide').addClass('open');
 			});
 			
-	
 			$("a.showday").click(function(){
 				$(this).next('.new_time_work').show("slow");
 				yaCounter17207572.reachGoal('showday');
@@ -76,21 +77,31 @@ $(document).ready(function(){
 			});
 
     // new fuel script
-    $.get( "/fuel/fuel_rate.json", function( data ) {
-      var itemsHTML = '';
-      itemsHTML += '<div class="fuel_item"><div class="title">98</div><div class="price">'
-                    + data.gasoline98.value +'</div></div>';
-      itemsHTML += '<div class="fuel_item"><div class="title">95</div><div class="price">'
-                    + data.gasoline95.value +'</div></div>';
-      itemsHTML += '<div class="fuel_item"><div class="title">92</div><div class="price">'
-                   + data.gasoline92.value +'</div></div>';
-      itemsHTML += '<div class="fuel_item"><div class="title">ДТ</div><div class="price">'
-                   + data.dT.value +'</div></div>';
-      itemsHTML += '<div class="fuel_item"><div class="title">ГАЗ</div><div class="price">'
-                   + data.gas.value +'</div></div>';
-      //console.log($('.fuel').length);
-      $('.fuel').append(itemsHTML);
-    });    
+    //$.get( "/fuel/fuel_rate.json", function( data ) {
+      //var itemsHTML = '';
+      //itemsHTML += '<div class="fuel_item"><div class="title">98</div><div class="price">'
+                    //+ data.gasoline98.value +'</div></div>';
+      //itemsHTML += '<div class="fuel_item"><div class="title">95</div><div class="price">'
+                    //+ data.gasoline95.value +'</div></div>';
+      //itemsHTML += '<div class="fuel_item"><div class="title">92</div><div class="price">'
+                   //+ data.gasoline92.value +'</div></div>';
+      //itemsHTML += '<div class="fuel_item"><div class="title">ДТ</div><div class="price">'
+                   //+ data.dT.value +'</div></div>';
+      //itemsHTML += '<div class="fuel_item"><div class="title">ГАЗ</div><div class="price">'
+                   //+ data.gas.value +'</div></div>';
+      ////console.log($('.fuel').length);
+      //$('.fuel').append(itemsHTML);
+    //});    
+
+    //replace ol relarive urls in images
+    // @todo remove on production
+    $("body img").each(function() {
+      var thisSrc = $(this).attr('src');
+      var r = new RegExp('^(?:[a-z]+:)?//', 'i');
+      if (!(r.test(thisSrc))){
+        $(this).attr('src', 'https://gorodvitebsk.by' + thisSrc);
+      }
+    });  
 
     // video widget script
       $('#video-carusel').owlCarousel({
