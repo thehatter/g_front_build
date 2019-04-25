@@ -17,6 +17,10 @@
   }
 }
 
+.news_block_v2_top_no_margin {
+  margin: 0px 0 14px 0;
+}
+
 .news_item_v2 {
   @extend %standart_font_2;
   position: relative;
