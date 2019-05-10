@@ -15,7 +15,7 @@ $article_text_padding: 30px;
 
 
 
-.article_body img{
+.article_body img {
   max-width: 100%;
   width: 100%;
   height: auto;
@@ -30,6 +30,17 @@ $article_text_padding: 30px;
     margin: 1em 0;
   }
 
+}
+
+.article_body table {
+  width: calc(100% + 10px) !important;
+  margin: 0 -5px !important;
+
+
+  td {
+    padding: 5px;
+    width: auto !important;
+  }
 }
 
 .article_page h1.article_title {
