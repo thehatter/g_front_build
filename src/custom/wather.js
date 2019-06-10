@@ -109,13 +109,17 @@
         a(i).append(c);
       }
     };
-    a.get("/xml/all_widget/wather.xml", function(t) {
-      e.createSmallWidget(".wather_widget a", t),
-        e.createBigWidget(".big_wather_widget_container", t),
-        a(".weekday").click(function() {
-          a(this).toggleClass("open");
-        });
-    });
+    //if this is a wather page
+    if($('.big_wather_widget_container').length > 0) {
+      a.get("/xml/all_widget/wather.xml", function(t) {
+          //e.createSmallWidget(".wather_widget a", t),
+          e.createBigWidget(".big_wather_widget_container", t),
+          a(".weekday").click(function() {
+            a(this).toggleClass("open");
+          });
+      });
+    } 
+
   });
 })(jQuery);
 
