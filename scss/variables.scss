@@ -7,6 +7,8 @@ $main_color: #7D1CB6;
 $main_color__active: #681896;
 
 $second_color: #663399;
+$light_purp: #cc33cc;
+$bright_ellow: #ffff00;
 
 $bg_gray: #e6e6e6;
 
@@ -122,10 +124,32 @@ $bg_gray: #e6e6e6;
   background: #fff;
 }
 
+.big_section_header_white {
+  background: #fff;
+}
+
+.big_section_header_purple {
+  background: $main_color;
+  color: #fff;
+  h1 {
+    @extend %standart_font_2;
+    color: #fff;
+    margin: 0;
+    font-weight: 300;
+    font-size: 28px;
+
+    span {
+      font-weight: bold;
+    } 
+  }
+  a { color: #fff;}
+  .r_links a { color: #fff;}
+}
 
 .more_link_right {
   text-align: right;
   margin: 5px 16px;
+
 
   a {
     @extend %standart_font_2;
